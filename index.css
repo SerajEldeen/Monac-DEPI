@@ -238,6 +238,9 @@ ul span {
   #features .secondRow {
     flex-direction: column;
   }
+  .firstRow .allFeatures {
+    padding-right: 100px;
+  }
 }
 
 /* Courses */

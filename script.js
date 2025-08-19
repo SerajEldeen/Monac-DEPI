@@ -16,3 +16,42 @@ toggleCheckbox.addEventListener("change", () => {
     localStorage.setItem("theme", "light");
   }
 });
+
+const themeBtn = document.getElementById("theme-btn");
+const popup = document.getElementById("theme-popup");
+const colorPicker = document.getElementById("color-picker");
+const positionSelect = document.getElementById("position-select");
+const saveBtn = document.getElementById("save-theme");
+const closeBtn = document.getElementById("close-popup");
+
+// Open popup
+themeBtn.addEventListener("click", () => {
+  popup.style.display = "flex";
+});
+
+// Close popup (X)
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+// Save settings
+saveBtn.addEventListener("click", () => {
+  // Change theme color
+  document.body.style.backgroundColor = colorPicker.value;
+
+  // Change button position (with rotation)
+  if (positionSelect.value === "left") {
+    themeBtn.style.left = "10";
+    themeBtn.style.right = "auto";
+    themeBtn.style.transform = "translateY(-50%) rotate(-90deg)";
+    themeBtn.style.transformOrigin = "left center";
+  } else {
+    themeBtn.style.right = "10px";
+    themeBtn.style.left = "auto";
+    themeBtn.style.transform = "translateY(-50%) rotate(90deg)";
+    themeBtn.style.transformOrigin = "right center";
+  }
+
+  // Close popup
+  popup.style.display = "none";
+});

@@ -55,6 +55,30 @@
 
       <img src="images/header.png" alt="HeaderImg" width="100%" />
     </header>
+    <!-- Theme Button -->
+    <button id="theme-btn">Theme</button>
+
+    <!-- Popup Modal -->
+    <div id="theme-popup" class="popup">
+      <div class="popup-content">
+        <span id="close-popup">&times;</span>
+        <h3>Theme Settings</h3>
+
+        <label>Choose Theme Color:</label>
+        <input type="color" id="color-picker" />
+
+        <br /><br />
+
+        <label>Move Button:</label>
+        <select id="position-select">
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+        </select>
+
+        <br /><br />
+        <button id="save-theme">Save</button>
+      </div>
+    </div>
 
     <!-- Main Content -->
     <main>

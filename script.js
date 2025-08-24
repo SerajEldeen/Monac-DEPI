@@ -37,7 +37,7 @@ closeBtn.addEventListener("click", () => {
 // Save settings
 saveBtn.addEventListener("click", () => {
   // Change theme color
-  document.body.style.backgroundColor = colorPicker.value;
+  document.body.style.setProperty("--primary-color", colorPicker.value);
 
   // Change button position (with rotation)
   if (positionSelect.value === "left") {
@@ -54,4 +54,15 @@ saveBtn.addEventListener("click", () => {
 
   // Close popup
   popup.style.display = "none";
+});
+
+const hamburger = document.getElementById("hamburger");
+const navUl = document.querySelector("nav ul");
+const navImg = document.querySelector("nav img");
+const navButtons = document.querySelector("nav div.buttons");
+
+hamburger.addEventListener("click", () => {
+  navUl.classList.toggle("active");
+  navImg.classList.toggle("active");
+  navButtons.classList.toggle("active");
 });

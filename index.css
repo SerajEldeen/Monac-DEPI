@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #ecb76f; /* default primary color */
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -15,7 +19,7 @@ a {
 
 /* Header */
 header {
-  background-color: #ecb76f;
+  background-color: var(--primary-color);
   padding: 20px 50px;
 }
 header nav {
@@ -56,7 +60,7 @@ nav div.buttons button {
   line-height: 1.5;
 }
 .leftSide span {
-  color: #ecb76f;
+  color: var(--primary-color);
   background-color: black;
   border: 1px solid black;
   padding: 6px 8px;
@@ -75,9 +79,22 @@ nav div.buttons button {
   border-radius: 20px;
   border: 1px solid black;
   color: black;
-  background-color: #ecb76f;
+  background-color: var(--primary-color);
   font-weight: 600;
   cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  position: relative;
+  right: 0;
+}
+nav ul.active,
+nav div.buttons.active,
+nav img.active {
+  display: flex;
 }
 
 @media (max-width: 640px) {
@@ -87,12 +104,24 @@ nav div.buttons button {
   }
   nav ul {
     order: 2;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
   }
   nav img {
     order: 1;
+    display: none;
   }
   nav div.buttons {
     order: 3;
+    flex-direction: column;
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
   }
   #hero {
     flex-direction: column;
@@ -151,7 +180,7 @@ ul span {
 }
 .educationDiv h2 span,
 .getstartedCard .leftSide h2 span {
-  background-color: #ecb76f;
+  background-color: var(--primary-color);
   color: black;
   border: 1px solid black;
   padding: 6px 8px;
@@ -195,11 +224,11 @@ ul span {
   max-width: 220px;
 }
 .allFeatures h2 span {
-  color: #ecb76f;
+  color: var(--primary-color);
 }
 .allFeatures button {
-  background-color: #ecb76f;
-  border: 1px solid #ecb76f;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 20px;
@@ -254,9 +283,9 @@ ul span {
   text-align: center;
 }
 #courses h2 span {
-  color: #ecb76f;
+  color: var(--primary-color);
   border-radius: 15px;
-  border: 1px solid #ecb76f;
+  border: 1px solid var(--primary-color);
   background-color: black;
 }
 #courses .cards {
@@ -369,7 +398,7 @@ ul span {
   padding: 10px 15px;
   border-radius: 20px;
   border: 1px solid black;
-  color: #ecb76f;
+  color: var(--primary-color);
   background-color: black;
   cursor: pointer;
 }
@@ -402,7 +431,7 @@ ul span {
 }
 .trial h3 span {
   color: black;
-  background-color: #ecb76f;
+  background-color: var(--primary-color);
   border: 1px solid black;
   border-radius: 20px;
   padding: 2px 4px;
@@ -528,7 +557,7 @@ body.dark-mode #features .allFeatures {
 body.dark-mode .educationDiv span,
 body.dark-mode .leftSide span,
 body.dark-mode #courses h2 span {
-  background-color: #ecb76f;
+  background-color: var(--primary-color);
   color: black;
 }
 
